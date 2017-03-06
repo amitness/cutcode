@@ -26,3 +26,5 @@ Chrome extension to copy code snippet from stack overflow by double click.
 ### License
 
 This project is licensed under the GNU License - see the [LICENSE](LICENSE) file for details.
+
+Icon provided by [Open Iconic](www.useiconic.com/open).
