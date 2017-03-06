@@ -19,6 +19,10 @@ Chrome extension to copy code snippet from stack overflow by double click.
   Navigate to the cloned folder
   ```
 
+### References
+- [Copy & Paste & The Web : CSS-Tricks](https://css-tricks.com/copy-paste-the-web/)
+- [Double Click Event Handler: Stack Overflow](http://stackoverflow.com/questions/6462909/how-to-add-doubleclick-event-to-canvas-element-using-the-addeventlistener-meth)
+
 ### License
 
 This project is licensed under the GNU License - see the [LICENSE](LICENSE) file for details.
