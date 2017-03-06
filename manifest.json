@@ -5,9 +5,9 @@
 	"author": "Amit Chaudhary <studenton.com@gmail.com>",
 	"homepage_url": "https://github.com/studenton/cutcode",
 	"manifest_version": 2,
-    "permissions": [
-    	"clipboardWrite"
-  	],
+	"permissions": [
+		"clipboardWrite"
+	],
 	"content_scripts": [{
 		"matches": ["*://*.stackoverflow.com/*", "*://*.stackexchange.com/*"],
 		"js": ["scripts/stackoverflow/inject.js"],
