@@ -1,6 +1,8 @@
 # cutcode
 
-Chrome extension to copy code snippet from stack overflow by double click. 
+Chrome extension to copy code snippet from stack overflow by double clicking. 
+
+![Screencast](screencast.gif?raw=true) 
 
 ## Getting Started
 
