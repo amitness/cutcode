@@ -12,8 +12,11 @@ Array.from(document.getElementsByTagName('pre')) // get all code snippets
 		try {
 			window.getSelection().addRange(range);
 			document.execCommand('copy');
-			block.innerText = '';
 			window.getSelection().removeAllRanges()
+			block.style.border = '2px solid #0D0';
+			setTimeout(function () {
+			  return block.style.border = 'none';
+			}, 1000);
 		} catch (err) {
 			console.log('Failed to copy', err);
 		}
