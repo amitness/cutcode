@@ -18,7 +18,7 @@ Array.from(document.getElementsByTagName('pre')) // get all code snippets
 			block.style.border = '2px solid #0D0';
 			setTimeout(function () {
 			  return block.style.border = 'none';
-			}, 1000);
+			}, 500);
 		} catch (err) {
 			console.log('Failed to copy', err);
 		}
