@@ -20,11 +20,20 @@ Chrome extension to copy code snippet from stack overflow by double clicking.
   Enable the developer mode at top right.
   Click "Load Unpacked Extension".
   Navigate to the cloned folder.
-  ```
+  ```  
+
+### Local Development
+  - Follow installation instructions and install the extension.
+  - Work on the code.
+  - Use Reload (`Ctrl+R`) to reload the extension from `chrome://extensions` page.
+  - Test the new changes.
 
 ### References
 - [Copy & Paste & The Web : CSS-Tricks](https://css-tricks.com/copy-paste-the-web/)
 - [Double Click Event Handler: Stack Overflow](http://stackoverflow.com/questions/6462909/how-to-add-doubleclick-event-to-canvas-element-using-the-addeventlistener-meth)
+
+### Feedback
+We love feedback. [Create an issue](https://github.com/studenton/cutcode/issues) for all discussions, bugs, feature requests and pull requests.
 
 ### License
 
