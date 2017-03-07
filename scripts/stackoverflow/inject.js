@@ -2,7 +2,9 @@
 
 Array.from(document.getElementsByTagName('pre')) // get all code snippets
 .forEach(function (block) {
+	
 	block.addEventListener('dblclick', function (event) {
+		// Reference: http://stackoverflow.com/a/6462980/3485241
 		
 		// Add snippet to range
 		var range = document.createRange();
