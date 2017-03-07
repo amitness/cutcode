@@ -2,7 +2,7 @@
 
 Chrome extension to copy code snippet from stack overflow by double clicking. 
 
-![Screencast](screencast.gif?raw=true) 
+![Screencast](http://i.imgur.com/RbV6GgQ.gif)
 
 ## Getting Started
 
