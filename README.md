@@ -14,7 +14,7 @@ Chrome and Firefox extension to copy code snippet from Stack Overflow by double 
   git clone https://github.com/studenton/cutcode
   ```
   
-  ### Installing on Chrome
+### Installing on Chrome
 - Load the extension into Google Chrome as an Unpacked Extension:
 
   ```
@@ -40,7 +40,7 @@ Chrome and Firefox extension to copy code snippet from Stack Overflow by double 
 
   ```
   
-  ![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23825005/c8b70bfe-064f-11e7-9a9c-c228a6729b9c.png)
+![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23825005/c8b70bfe-064f-11e7-9a9c-c228a6729b9c.png)
 
 
 ### Local Development
