@@ -28,7 +28,7 @@ Chrome and Firefox extension to copy code snippet from Stack Overflow by double 
 
 ![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23824934/6104b958-064e-11e7-9834-9ec025b068c2.png)
 
-### Installing on Firefox
+  ### Installing on Firefox
 - Load the extension into Firefox as a Temporary Add-on:
 
   ```
