@@ -16,11 +16,14 @@ Chrome extension to copy code snippet from stack overflow by double clicking.
 - Load the extension into Google Chrome as an Unpacked Extension:
 
   ```
-  Navigate to chrome://extensions or select Menu > More Tools > Extensions.
-  Enable the developer mode at top right.
-  Click "Load Unpacked Extension".
+  Navigate to (1a) chrome://extensions or (1b) select Menu > More Tools > Extensions.
+  Enable the (2) developer mode at top right.
+  (3) Click "Load Unpacked Extension".
   Navigate to the cloned folder.
-  ```  
+
+  ```
+
+![Installation screenshot](https://cloud.githubusercontent.com/assets/10334352/23817930/d49f9b6a-05ab-11e7-97cc-dc11ffd5055e.png)
 
 ### Local Development
   - Follow installation instructions and install the extension.
