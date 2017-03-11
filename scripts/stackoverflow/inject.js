@@ -14,7 +14,7 @@ Array.from(document.getElementsByTagName('pre')) // get all code snippets
 		try {
 			window.getSelection().addRange(range);
 			document.execCommand('copy');
-			window.getSelection().removeAllRanges()
+			window.getSelection().removeAllRanges();
 			block.style.border = '2px solid #0D0';
 			setTimeout(function () {
 			  return block.style.border = 'none';
