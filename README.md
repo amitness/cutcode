@@ -61,7 +61,7 @@ We :heart: contributions. Feel free to send us a PR.
 [Create an issue](https://github.com/studenton/cutcode/issues) for all discussions, bugs, feature requests and pull requests.
 
 ### Authors
-* [**Amit Chaudhary**](https://github.com/studenton)
+[**Amit Chaudhary**](https://github.com/studenton)
 
 See also the list of [contributors](https://github.com/studenton/cutcode/contributors) who participated in this project.
 
