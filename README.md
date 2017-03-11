@@ -1,6 +1,7 @@
 # cutcode
 
-Chrome extension to copy code snippet from stack overflow by double clicking. 
+
+Chrome and Firefox extension to copy code snippet from Stack Overflow by double clicking. 
 
 ![Screencast](http://i.imgur.com/RbV6GgQ.gif)
 
@@ -9,9 +10,12 @@ Chrome extension to copy code snippet from stack overflow by double clicking.
 ### Installing
 
 - Clone the repo.
+
   ```shell
   git clone https://github.com/studenton/cutcode
   ```
+  
+  ### Installing on Chrome
 
 - Load the extension into Google Chrome as an Unpacked Extension:
 
@@ -20,10 +24,21 @@ Chrome extension to copy code snippet from stack overflow by double clicking.
   Enable the (2) developer mode at top right.
   (3) Click "Load Unpacked Extension".
   Navigate to the cloned folder.
-
+  (For more help, go to https://developer.chrome.com/extensions/getstarted#unpacked)
   ```
+	![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23824934/6104b958-064e-11e7-9834-9ec025b068c2.png)
 
-![Installation screenshot](https://cloud.githubusercontent.com/assets/10334352/23817930/d49f9b6a-05ab-11e7-97cc-dc11ffd5055e.png)
+  ### Installing on Firefox
+- Load the extension into Firefox as a Temporary Add-on:
+
+    - Open Firefox
+    - Enter (1) "about:debugging" in the URL bar
+    - Click (2) "Load Temporary Add-on"
+    - Open the cloned directory and select any file inside the folder.  
+  You can also refer the [official guide](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox)  from Firefox.
+  
+![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23825005/c8b70bfe-064f-11e7-9a9c-c228a6729b9c.png)
+
 
 ### Local Development
   - Follow installation instructions and install the extension.
