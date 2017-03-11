@@ -31,13 +31,11 @@ Chrome and Firefox extension to copy code snippet from Stack Overflow by double 
   ### Installing on Firefox
 - Load the extension into Firefox as a Temporary Add-on:
 
-  ```
-    open Firefox
-    enter (1) "about:debugging" in the URL bar
-    click (2) "Load Temporary Add-on"
-    open the add-on's directory and select any file inside the add-on.
-    (For more help, go to https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox)
-  ```
+    - Open Firefox
+    - Enter (1) "about:debugging" in the URL bar
+    - Click (2) "Load Temporary Add-on"
+    - Open the cloned directory and select any file inside the folder.  
+  You can also refer the [official guide](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox)  from Firefox.
   
 ![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23825005/c8b70bfe-064f-11e7-9a9c-c228a6729b9c.png)
 
