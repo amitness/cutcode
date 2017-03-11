@@ -38,7 +38,7 @@ Chrome and Firefox extension to copy code snippet from Stack Overflow by double 
     - Open the cloned directory and select any file inside the folder.  
     For additional help, refer the [official guide for Firefox](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox).
   
-![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23825005/c8b70bfe-064f-11e7-9a9c-c228a6729b9c.png)
+	![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23825005/c8b70bfe-064f-11e7-9a9c-c228a6729b9c.png)
 
 
 ### Local Development
