@@ -4,12 +4,12 @@
 	"description": "Double click to copy code from Stack Overflow.",
 	"author": "Amit Chaudhary <studenton.com@gmail.com>",
 	"homepage_url": "https://github.com/studenton/cutcode",
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"permissions": [
 		"clipboardWrite"
 	],
 	"content_scripts": [{
-		"matches": ["*://*.stackoverflow.com/*", "*://*.stackexchange.com/*"],
+		"matches": ["*://*.stackoverflow.com/*", "*://*.stackexchange.com/*", "*://github.com/*"],
 		"js": ["scripts/stackoverflow/inject.js"],
 		"run_at": "document_end"
 	}],
