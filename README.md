@@ -26,19 +26,22 @@ Chrome and Firefox extension to copy code snippet from Stack Overflow by double 
 
   ```
 
-![Installation screenshot](https://cloud.githubusercontent.com/assets/10334352/23817930/d49f9b6a-05ab-11e7-97cc-dc11ffd5055e.png)
+![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23824934/6104b958-064e-11e7-9834-9ec025b068c2.png)
 
 ### Installing on Firefox
 - Load the extension into Firefox as a Temporary Add-on:
 
   ```
     open Firefox
-    enter "about:debugging" in the URL bar
-    click "Load Temporary Add-on"
+    enter (1) "about:debugging" in the URL bar
+    click (2) "Load Temporary Add-on"
     open the add-on's directory and select any file inside the add-on.
     (For more help, go to https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox)
 
   ```
+  
+  ![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23825005/c8b70bfe-064f-11e7-9a9c-c228a6729b9c.png)
+
 
 ### Local Development
   - Follow installation instructions and install the extension.
