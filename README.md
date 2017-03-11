@@ -19,13 +19,14 @@ Chrome and Firefox extension to copy code snippet from Stack Overflow by double 
 
 - Load the extension into Google Chrome as an Unpacked Extension:
 
-  ```
-  Navigate to (1a) chrome://extensions or (1b) select Menu > More Tools > Extensions.
-  Enable the (2) developer mode at top right.
-  (3) Click "Load Unpacked Extension".
-  Navigate to the cloned folder.
-  (For more help, go to https://developer.chrome.com/extensions/getstarted#unpacked)
-  ```
+  
+  - Navigate to (1a) chrome://extensions or (1b) select Menu > More Tools > Extensions.
+  - Enable the (2) developer mode at top right.
+  - Click (3) "Load Unpacked Extension".
+  - Navigate to the cloned folder.  
+  For additional help, refer the [official guide for Chrome](https://developer.chrome.com/extensions/getstarted#unpacked).
+  
+  
 	![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23824934/6104b958-064e-11e7-9834-9ec025b068c2.png)
 
   ### Installing on Firefox
@@ -35,7 +36,7 @@ Chrome and Firefox extension to copy code snippet from Stack Overflow by double 
     - Enter (1) "about:debugging" in the URL bar
     - Click (2) "Load Temporary Add-on"
     - Open the cloned directory and select any file inside the folder.  
-  You can also refer the [official guide](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox)  from Firefox.
+    For additional help, refer the [official guide for Firefox](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox).
   
 ![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23825005/c8b70bfe-064f-11e7-9a9c-c228a6729b9c.png)
 
