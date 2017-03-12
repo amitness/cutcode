@@ -25,7 +25,7 @@ Array.from(document.getElementsByTagName('pre'))// get all code snippets
 
 			// Restore the block to original state
 			setTimeout(function () {
-			  block.style.border = 'none';
+				block.style.border = 'none';
 				block.innerText = originalText;
 			}, 500);
 
