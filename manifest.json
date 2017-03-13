@@ -4,9 +4,9 @@
 	"description": "Double click to copy code from Stack Overflow.",
 	"author": "Amit Chaudhary <studenton.com@gmail.com>",
 	"homepage_url": "https://github.com/studenton/cutcode",
-	"manifest_version": 3,
+	"manifest_version": 4,
 	"permissions": [
-		"clipboardWrite"
+		"clipboardWrite", "tabs"
 	],
 	"content_scripts": [{
 		"matches": ["*://*.stackoverflow.com/*", "*://*.stackexchange.com/*", "*://github.com/*"],
