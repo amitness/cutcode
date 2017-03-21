@@ -2,14 +2,14 @@
 var color = '',
 attribution = false,
 commenting = '',
-codeAttribution = '';
+codeAttribution = '',
+hotkey = '';
 
 function onError(error) {
   console.log(`Error: ${error}`);
 }
 
 function onGot(item) {
-	console.log(item.commenting);
 	if (item.color){ //is color set
 		color = item.color;
 	}
@@ -23,23 +23,34 @@ function onGot(item) {
 		}
 	}
 }
+function isNotChrome(){
+	return typeof browser !== typeof undefined ? true : false;
+}
 
-var getting = browser.storage.local.get();
-getting.then(onGot, onError);
+ 
+ 
+if (isNotChrome){
+	chrome.storage.local.get(null, onGot);
+}
+else{
+	var getting = browser.storage.local.get();
+	getting.then(onGot, onError);
+}
+
+
 
 Array.from(document.getElementsByTagName('pre')) // get all code snippets
 .forEach(function (block) {
-	
 	block.addEventListener('dblclick', function (event) {
 		// Reference: http://stackoverflow.com/a/6462980/3485241
 		console.log(commenting);
 		//gets the address of the current page
 		if (attribution){
-			codeAttribution = '<br/><br/> ' + commenting + ' source: ' + window.location.toString();
+			codeAttribution = commenting + ' source: ' + window.location.toString()+'<br/>';
 		}
 		var copyText = block.innerHTML;
 		
-		copyText = copyText + codeAttribution;
+		copyText = codeAttribution+ copyText;
 		//copy old HTML
 		var oldHTML = block.innerHTML;
 		
