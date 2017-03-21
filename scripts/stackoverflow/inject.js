@@ -15,9 +15,9 @@ Array.from(document.getElementsByTagName('pre')) // get all code snippets
 			window.getSelection().addRange(range);
 			document.execCommand('copy');
 			window.getSelection().removeAllRanges();
-			block.style.border = '2px solid #0D0';
+			block.style.outline = '2px solid #0D0';
 			setTimeout(function () {
-			  return block.style.border = 'none';
+			  return block.style.outline = 'none';
 			}, 500);
 		} catch (err) {
 			console.log('Failed to copy', err);
