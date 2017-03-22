@@ -1,21 +1,38 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <meta charset="utf-8">
-  </head>
 
-  <body>
+   <head>
+      <meta charset="utf-8">
+   </head>
 
-    <form>
-        <label>border highlight color<input type="text" id="color"></label>
-		<label>Attribution<input type="checkbox" id="attribution"></label>
-		<label>commentingStyle<input type="text" id="commenting"></label>
-		<button type="submit">Save</button>
-    </form>
-	
-	<div id="status"></div>
-    <script src="settings.js"></script>
-  </body>
+   <body>
 
+      <form>
+         <table  cellpadding="5">
+            <tbody>
+               <tr>
+                  <td><label>border highlight color</label></td>
+                  <td><input type="text" id="color"></td>
+               </tr>
+               <tr>
+                  <td><label>Attribution</label></td>
+                  <td><input type="checkbox" id="attribution"></td>
+               </tr>
+               <tr>
+                  <td><label>commentingStyle</label></td>
+                  <td><input type="text" id="commenting"></td>
+               </tr>
+               <tr>
+                  <td><button type="submit">Save</button></td>
+                  <td></td>
+               </tr>
+               <tr>
+            </tbody>
+         </table>
+      </form>
+
+      <div id="status"></div>
+      <script src="settings.js"></script>
+      
+   </body>
 </html>
