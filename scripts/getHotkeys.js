@@ -3,6 +3,6 @@ var imported = document.createElement('script');
 imported.src = 'mousetrap.js';
 document.head.appendChild(imported);
 
- Mousetrap.bind('4', function() {
-	 alert("4");
+ Mousetrap.bind('5', function() {
+	 alert("5");
  });

@@ -23,4 +23,5 @@ Array.from(document.getElementsByTagName('pre')) // get all code snippets
 			console.log('Failed to copy', err);
 		}
 	});
+
 });

@@ -1,4 +1,3 @@
-/*global define:false */
 /**
  * Copyright 2016 Craig Campbell
  *
