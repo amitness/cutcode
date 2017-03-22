@@ -10,7 +10,7 @@
 	],
 	"content_scripts": [{
 		"matches": ["*://*.stackoverflow.com/*", "*://*.stackexchange.com/*", "*://github.com/*"],
-		"js": ["scripts/stackoverflow/inject.js"],
+		"js": ["scripts/stackoverflow/inject.js", "scripts/mousetrap.js", "scripts/getHotkeys.js"],
 		"run_at": "document_end"
 	}],
 	"icons": {
