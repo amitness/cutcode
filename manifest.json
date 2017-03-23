@@ -6,7 +6,8 @@
 	"author": "Amit Chaudhary <studenton.com@gmail.com>",
 	"homepage_url": "https://github.com/studenton/cutcode",
 	"options_ui": {
-	"page": "settings/UserSettings.html"
+		"chrome_style": true,
+		"page": "Settings/UserSettings.html"
 	},
 	"permissions": [
 		"clipboardWrite",
@@ -15,7 +16,7 @@
 	"content_scripts": [{
 		"matches": ["*://*.stackoverflow.com/*", "*://*.stackexchange.com/*", "*://github.com/*"],
 		"js": ["scripts/stackoverflow/inject.js",
-			   "settings/settings.js"
+			   "Settings/settings.js"
 		],
 		"run_at": "document_end"
 	}],
