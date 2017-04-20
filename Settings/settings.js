@@ -1,4 +1,4 @@
-//writes options selected by user to the Chrome remote (sync) Storage API
+//writes options selected by user to the Chrome remote (local) Storage API
 function save_options(){
   var snippets = document.getElementById('snippets').value;
   var chars = document.getElementById('chars').value;
@@ -9,7 +9,7 @@ function save_options(){
   if(chars ===""){
     chars = 500;
   }
-  chrome.storage.sync.set({
+  chrome.storage.local.set({
     numSnippets: snippets,
     numChars: chars
   }, function(){
@@ -71,10 +71,10 @@ document.getElementById('options_link').addEventListener('click', function(){
 //this function is called to set up the default options when options is opened. On the very first pass,
 //all three options will be null, so they are set here. The DOM will be updated
 //by updateOptionsValues
-chrome.storage.sync.get(null, function(result){
+chrome.storage.local.get(null, function(result){
   updateOptionsValues(result.numSnippets, result.numChars);
   if(!result.snippetHistory){
-    chrome.storage.sync.set({snippetHistory: []});
+    chrome.storage.local.set({snippetHistory: []});
   }
 });
 
@@ -89,7 +89,7 @@ window.onload = function(){
                       <th>Date</th>
                     </tr>`;
   document.querySelector("body").appendChild(table);
-  chrome.storage.sync.get("snippetHistory", function(result){
+  chrome.storage.local.get("snippetHistory", function(result){
     snipArray = result.snippetHistory;
     console.log(snipArray);
     for(var i=0; i<snipArray.length; i++){

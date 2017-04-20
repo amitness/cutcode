@@ -4,15 +4,15 @@
 //the first time the extension is loaded up. It sets up
 //default values for our options and initializes snippetHistory
 //to an empty array
-chrome.storage.sync.get(null, function(result){
+chrome.storage.local.get(null, function(result){
   if(!result.snippetHistory){
-    chrome.storage.sync.set({snippetHistory: []});
+    chrome.storage.local.set({snippetHistory: []});
   }
 	if(!result.numSnippets){
-    chrome.storage.sync.set({numSnippets: 5});
+    chrome.storage.local.set({numSnippets: 5});
   }
 	if(!result.numChars){
-    chrome.storage.sync.set({numChars: 500});
+    chrome.storage.local.set({numChars: 500});
   }
 });
 
@@ -31,7 +31,7 @@ Array.from(document.getElementsByTagName('pre')) // get all code snippets
 		try {
 			window.getSelection().addRange(range);
 			document.execCommand('copy');
-			chrome.storage.sync.get(null, function(result){
+			chrome.storage.local.get(null, function(result){
 				console.log(result);
 				//if grabbing this snippet results in exceeding the
 				//specified number, pop off the oldes one
@@ -46,7 +46,7 @@ Array.from(document.getElementsByTagName('pre')) // get all code snippets
 				  URI: range.commonAncestorContainer.baseURI,
 					date: new Date().toString()
 				});
-				chrome.storage.sync.set({snippetHistory: result.snippetHistory});
+				chrome.storage.local.set({snippetHistory: result.snippetHistory});
 			});
 
 			window.getSelection().removeAllRanges();
