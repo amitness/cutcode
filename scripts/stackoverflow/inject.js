@@ -1,5 +1,21 @@
 'use strict';
 
+//Executed when the extension is invoked. This will only do things
+//the first time the extension is loaded up. It sets up
+//default values for our options and initializes snippetHistory
+//to an empty array
+chrome.storage.sync.get(null, function(result){
+  if(!result.snippetHistory){
+    chrome.storage.sync.set({snippetHistory: []});
+  }
+	if(!result.numSnippets){
+    chrome.storage.sync.set({numSnippets: 5});
+  }
+	if(!result.numChars){
+    chrome.storage.sync.set({numChars: 500});
+  }
+});
+
 Array.from(document.getElementsByTagName('pre')) // get all code snippets
 .forEach(function (block) {
 
@@ -9,18 +25,26 @@ Array.from(document.getElementsByTagName('pre')) // get all code snippets
 		// Add snippet to range
 		var range = document.createRange();
 		range.selectNode(block);
-		
+
 
 		// Copy snippet to clipboard
 		try {
 			window.getSelection().addRange(range);
 			document.execCommand('copy');
-			chrome.storage.sync.get("snippetHistory", function(result){
-				console.log(result.snippetHistory);
+			chrome.storage.sync.get(null, function(result){
+				console.log(result);
+				//if grabbing this snippet results in exceeding the
+				//specified number, pop off the oldes one
+				if(result.snippetHistory.length >= result.numSnippets){
+					result.snippetHistory.pop();
+				}
+
+				//add this snippet as the most recent. Entry is controlled
+				//by user options
 				result.snippetHistory.unshift({
-					snippet: range.toString(),
+					snippet: range.toString().substring(0, Number(result.numChars)),
 				  URI: range.commonAncestorContainer.baseURI,
-					date: Date.now()
+					date: new Date().toString()
 				});
 				chrome.storage.sync.set({snippetHistory: result.snippetHistory});
 			});
