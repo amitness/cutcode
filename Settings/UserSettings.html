@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="settings.css">
+    <title>Cutcode Options</title>
+  </head>
+
+  <body>
+    <h1> Cutcode Options </h1>
+    <div id="status"></div>
+    <form class="options">
+      <h3>Select the  maximum number of code snippets to be saved (max 12)</h3>
+      <input type="number" id="snippets" min="0" max="12">
+
+      <h3>Select how many characters of each code snippet should be displayed (max 500)</h3>
+      <input type="number" id="chars" min="1" max="500">
+      <br/>
+      <br/>
+
+      <button id="save"> Save Options </button>
+      <a href="#" target="_blank" id="options_link">View recent code snippets in a separate page</a>
+    </form>
+
+
+    <script src="settings.js"></script>
+  </body>
+</html>
