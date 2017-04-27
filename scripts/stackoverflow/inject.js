@@ -12,6 +12,7 @@ Array.from(document.getElementsByTagName('pre')) // get all code snippets
 
 		// Copy snippet to clipboard
 		try {
+			window.getSelection().removeAllRanges();
 			window.getSelection().addRange(range);
 			document.execCommand('copy');
 			window.getSelection().removeAllRanges();
