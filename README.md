@@ -12,7 +12,7 @@ Chrome and Firefox extension to copy code snippet from Stack Overflow by double 
 - Clone the repo.
 
   ```shell
-  git clone https://github.com/studenton/cutcode
+  git clone https://github.com/amitness/cutcode
   ```
   
   ### Installing on Chrome
@@ -50,20 +50,20 @@ Chrome and Firefox extension to copy code snippet from Stack Overflow by double 
 ## Contributing
 We :heart: contributions. Feel free to send us a PR.
 
-1. [Create an issue](https://github.com/studenton/cutcode/issues/new) if there is one.
-2. [Fork the repo] (https://github.com/studenton/cutcode/fork).
+1. [Create an issue](https://github.com/amitness/cutcode/issues/new) if there is one.
+2. [Fork the repo](https://github.com/amitness/cutcode/fork).
 3. Create your feature branch (`git checkout -b your-feature`).
 4. Add and commit your changes (`git commit -am 'message'`).
 5. Push the branch (`git push origin your-feature`).
 6. Create a new Pull Request.
 
 ### Feedback
-[Create an issue](https://github.com/studenton/cutcode/issues) for all discussions, bugs, feature requests and pull requests.
+[Create an issue](https://github.com/amitness/cutcode/issues) for all discussions, bugs, feature requests and pull requests.
 
 ### Authors
-[**Amit Chaudhary**](https://github.com/studenton)
+[**Amit Chaudhary**](https://github.com/amitness)
 
-See also the list of [contributors](https://github.com/studenton/cutcode/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/amitness/cutcode/contributors) who participated in this project.
 
 ### License
 
