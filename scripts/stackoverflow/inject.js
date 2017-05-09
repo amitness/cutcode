@@ -29,6 +29,7 @@ Array.from(document.getElementsByTagName('pre')) // get all code snippets
 
 		// Copy snippet to clipboard
 		try {
+			window.getSelection().removeAllRanges();
 			window.getSelection().addRange(range);
 			document.execCommand('copy');
 			chrome.storage.local.get(null, function(result){
