@@ -6,8 +6,11 @@
 	"author": "Amit Chaudhary <studenton.com@gmail.com>",
 	"homepage_url": "https://github.com/studenton/cutcode",
 	"options_ui": {
-	"page": "settings/UserSettings.html"
+
+		"page": "Settings/UserSettings.html",
+		"chrome_style": true
 	},
+	"manifest_version": 2,
 	"permissions": [
 		"clipboardWrite",
 		"storage"

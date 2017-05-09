@@ -1,38 +1,27 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="settings.css">
+    <title>Cutcode Options</title>
+  </head>
 
-   <head>
-      <meta charset="utf-8">
-   </head>
+  <body>
+    <h1> Cutcode Options </h1>
+    <div id="status"></div>
+    <form class="options">
+      <h3>Select the  maximum number of code snippets to be saved (max 12)</h3>
+      <input type="number" id="snippets" min="0" max="12">
 
-   <body>
+      <h3>Select how many characters of each code snippet should be displayed (max 500)</h3>
+      <input type="number" id="chars" min="1" max="500">
+      <br/>
+      <br/>
 
-      <form>
-         <table  cellpadding="5">
-            <tbody>
-               <tr>
-                  <td><label>border highlight color</label></td>
-                  <td><input type="text" id="color"></td>
-               </tr>
-               <tr>
-                  <td><label>Attribution</label></td>
-                  <td><input type="checkbox" id="attribution"></td>
-               </tr>
-               <tr>
-                  <td><label>commentingStyle</label></td>
-                  <td><input type="text" id="commenting"></td>
-               </tr>
-               <tr>
-                  <td><button type="submit">Save</button></td>
-                  <td></td>
-               </tr>
-               <tr>
-            </tbody>
-         </table>
-      </form>
+      <button id="save"> Save Options </button>
+      <a href="#" target="_blank" id="options_link">View recent code snippets in a separate page</a>
+    </form>
 
-      <div id="status"></div>
-      <script src="settings.js"></script>
-      
-   </body>
+
+    <script src="settings.js"></script>
+  </body>
 </html>
