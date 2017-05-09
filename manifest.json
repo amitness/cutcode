@@ -9,8 +9,8 @@
 		"clipboardWrite"
 	],
 	"content_scripts": [{
-		"matches": ["*://*.stackoverflow.com/*", "*://*.stackexchange.com/*", "*://github.com/*"],
-		"js": ["scripts/stackoverflow/inject.js"],
+		"matches": ["<all_urls>"],
+		"js": ["scripts/stackoverflow/inject.js", "scripts/codeTag.js"],
 		"run_at": "document_end"
 	}],
 	"icons": {
