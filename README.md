@@ -51,7 +51,7 @@ Chrome and Firefox extension to copy code snippet from Stack Overflow by double 
 We :heart: contributions. Feel free to send us a PR.
 
 1. [Create an issue](https://github.com/studenton/cutcode/issues/new) if there is one.
-2. [Fork the repo] (https://github.com/studenton/cutcode/fork).
+2. [Fork the repo](https://github.com/studenton/cutcode/fork).
 3. Create your feature branch (`git checkout -b your-feature`).
 4. Add and commit your changes (`git commit -am 'message'`).
 5. Push the branch (`git push origin your-feature`).

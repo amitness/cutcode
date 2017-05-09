@@ -1,0 +1,20 @@
+table{
+  margin: 0 auto;
+}
+
+th{
+  border: 1px solid black;
+}
+
+td{
+  border: 1px solid black;
+}
+
+#status{
+  color:blue;
+  float:right;
+  position:relative;
+  height: 1.2rem;
+  width: 5%;
+  bottom:2rem;
+}
