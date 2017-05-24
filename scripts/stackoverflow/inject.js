@@ -1,62 +1,104 @@
-'use strict';
+/**
+ * Executed when the extension is invoked.
+ * This will only do things the first time the extension is loaded up. 
+ */
+(function cutCode() {
+  "use strict";
+  // local variables
+  /**
+	 * Defines the default configurations
+	 * @prop {Array} snippetHistory contains history of code snippets taken
+	 * @prop {Number} numSnippets Defines maximum number of snippets
+	 * @prop {Number} numChars Defines number of characters to be held for each snippet
+	 */
+  var defaults = {
+    snippetHistory: [],
+    numSnippets: 5,
+    numChars: 500
+  };
 
-//Executed when the extension is invoked. This will only do things
-//the first time the extension is loaded up. It sets up
-//default values for our options and initializes snippetHistory
-//to an empty array
-chrome.storage.local.get(null, function(result){
-  if(!result.snippetHistory){
-    chrome.storage.local.set({snippetHistory: []});
+  // give the config object a special name to
+  // prevent conflicts with other settings
+  var configName = "cut$code";
+
+  //-> end of local variables
+
+  // main
+
+  getConfig();
+  setUpEvents("pre");
+
+  //-> end of main
+
+  // helper functions
+
+  /**
+	 * Gets and sets the config object saved in storage
+	 * @param {Object} configName The name of the configuration object to retrieve
+	 * @returns {Object} The configuration object
+	 */
+  function getConfig() {
+    chrome.storage.local.get(configName, function(config) {
+      if (!config) {
+        config = defaults;
+        chrome.storage.local.set({ configName: config });
+      }
+
+      return config;
+    });
   }
-	if(!result.numSnippets){
-    chrome.storage.local.set({numSnippets: 5});
+
+  function setUpEvents(tagName) {
+    var blocks = document.getElementsByTagName(tagName);
+    elements.forEach(function(block) {
+      // double clicked
+      block.addEventListener("dblclick", function(event) {
+        copyBlock(block);
+        styleBlock(block);
+      });
+    });
   }
-	if(!result.numChars){
-    chrome.storage.local.set({numChars: 500});
+
+  function copyBlock(block) {
+    // Select block of code
+    var range = document.createRange();
+    range.selectNode(block);
+
+    try {
+      window.getSelection().addRange(range);
+      document.execCommand("copy");
+
+      var config = getConfig(configName);
+      addNewSnippet(range, config);
+
+      // improves performance
+	  range.detach();
+		
+    } catch (error) {}
   }
-});
 
-Array.from(document.getElementsByTagName('pre')) // get all code snippets
-.forEach(function (block) {
+  function styleBlock(block) {
+    block.style.outline = "2px solid #0D0";
+    setTimeout(function() {
+      return (block.style.outline = "none");
+    }, 500);
+  }
 
-	block.addEventListener('dblclick', function (event) {
-		// Reference: http://stackoverflow.com/a/6462980/3485241
+  function addNewSnippet(range, config) {
+   
+    if (config.snippetHistory.length >= config.numSnippets) {
+      config.snippetHistory.pop();
+    }
 
-		// Add snippet to range
-		var range = document.createRange();
-		range.selectNode(block);
+    //add this snippet as the most recent. Entry is controlled
+    //by user options
+    config.snippetHistory.unshift({
+      snippet: range.toString().substring(0, Number(result.numChars)),
+      URI: range.commonAncestorContainer.baseURI,
+      date: new Date().toString()
+    });
+    chrome.storage.local.set({ configName: config });
+  }
 
-
-		// Copy snippet to clipboard
-		try {
-			window.getSelection().removeAllRanges();
-			window.getSelection().addRange(range);
-			document.execCommand('copy');
-			chrome.storage.local.get(null, function(result){
-				console.log(result);
-				//if grabbing this snippet results in exceeding the
-				//specified number, pop off the oldes one
-				if(result.snippetHistory.length >= result.numSnippets){
-					result.snippetHistory.pop();
-				}
-
-				//add this snippet as the most recent. Entry is controlled
-				//by user options
-				result.snippetHistory.unshift({
-					snippet: range.toString().substring(0, Number(result.numChars)),
-				  URI: range.commonAncestorContainer.baseURI,
-					date: new Date().toString()
-				});
-				chrome.storage.local.set({snippetHistory: result.snippetHistory});
-			});
-
-			window.getSelection().removeAllRanges();
-			block.style.outline = '2px solid #0D0';
-			setTimeout(function () {
-			  return block.style.outline = 'none';
-			}, 500);
-		} catch (err) {
-			console.log('Failed to copy', err);
-		}
-	});
-});
+  //-> end of helper functions
+})();
