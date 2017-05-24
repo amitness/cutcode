@@ -17,7 +17,7 @@
     numChars: 500
   };
 
-  // give the config object a special name to 
+  // give the config object a special name to
   // prevent conflicts with other settings
   var configName = "cut$code";
 
@@ -25,7 +25,7 @@
 
   // main
 
-  getConfig(configName, defaults);
+  getConfig();
   setUpEvents("pre");
 
   //-> end of main
@@ -37,7 +37,7 @@
 	 * @param {Object} configName The name of the configuration object to retrieve
 	 * @returns {Object} The configuration object
 	 */
-  function getConfig(defaults) {
+  function getConfig() {
     chrome.storage.local.get(configName, function(config) {
       if (!config) {
         config = defaults;
@@ -69,23 +69,11 @@
       document.execCommand("copy");
 
       var config = getConfig(configName);
-      //if grabbing this snippet results in exceeding the
-      //specified number, pop off the oldest one
-      if (config.snippetHistory.length >= config.numSnippets) {
-        config.snippetHistory.pop();
-      }
-
-      //add this snippet as the most recent. Entry is controlled
-      //by user options
-      config.snippetHistory.unshift({
-        snippet: range.toString().substring(0, Number(result.numChars)),
-        URI: range.commonAncestorContainer.baseURI,
-        date: new Date().toString()
-      });
-      chrome.storage.local.set({ configName: config });
+      addNewSnippet(range, config);
 
       // improves performance
-      range.detach();
+	  range.detach();
+		
     } catch (error) {}
   }
 
@@ -94,6 +82,22 @@
     setTimeout(function() {
       return (block.style.outline = "none");
     }, 500);
+  }
+
+  function addNewSnippet(range, config) {
+   
+    if (config.snippetHistory.length >= config.numSnippets) {
+      config.snippetHistory.pop();
+    }
+
+    //add this snippet as the most recent. Entry is controlled
+    //by user options
+    config.snippetHistory.unshift({
+      snippet: range.toString().substring(0, Number(result.numChars)),
+      URI: range.commonAncestorContainer.baseURI,
+      date: new Date().toString()
+    });
+    chrome.storage.local.set({ configName: config });
   }
 
   //-> end of helper functions
