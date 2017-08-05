@@ -60,11 +60,6 @@ We :heart: contributions. Feel free to send us a PR.
 ### Feedback
 [Create an issue](https://github.com/amitness/cutcode/issues) for all discussions, bugs, feature requests and pull requests.
 
-### Authors
-[**Amit Chaudhary**](https://github.com/amitness)
-
-See also the list of [contributors](https://github.com/amitness/cutcode/contributors) who participated in this project.
-
 ### License
 
 This project is licensed under the GNU License - see the [LICENSE](LICENSE) file for details.
