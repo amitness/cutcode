@@ -2,16 +2,28 @@
 function save_options(){
   var snippets = document.getElementById('snippets').value;
   var chars = document.getElementById('chars').value;
+  var allowedString = document.getElementById('allowed-sites').value;
 
   if(snippets === ""){
     snippets = 5;
   }
-  if(chars ===""){
+  if(chars === ""){
     chars = 500;
   }
+  if(allowedString === ""){
+    allowedString = "stackoverflow.com";
+  }
+
+  //getting an array with the websites the user allows. Only addresses with a dot 
+  //or just a dot alone are valid inputs. Everything else is discarded.
+  var allowedArray = allowedString.replace(/ /g,'').split(',').filter(function(value) {
+    return value.match(/(.*\..*)|\./);
+  })
+
   chrome.storage.local.set({
     numSnippets: snippets,
-    numChars: chars
+    numChars: chars,
+    allowedSites: allowedArray
   }, function(){
     document.getElementById("status").innerText = "Saved";
     setTimeout(function(){
@@ -22,10 +34,22 @@ function save_options(){
 
 //updates DOM with user Selected options. This function is called whenever the
 //remote storage is updated
-function updateOptionsValues(numSnippets=5, numChars=500){
+function updateOptionsValues(numSnippets=5, numChars=500, 
+    allowedSites=['stackoverflow.com']){
 
   document.getElementById('snippets').value = numSnippets;
   document.getElementById('chars').value = numChars;
+
+  var allowedString = "";
+  for(let i = 0; i < allowedSites.length; i++) {
+   if(i == 0) {
+     allowedString += allowedSites[i];
+   }
+   else {
+     allowedString += ', ' + allowedSites[i]; 
+   }
+  }
+  document.getElementById('allowed-sites').value = allowedString;
 }
 
 //helper function to update the DOM with our history of snippets whenever
@@ -44,6 +68,7 @@ function updateSnippetHistory(snippetObject){
 chrome.storage.onChanged.addListener(function(changes, namespace){
   var newSnippetsNumber;
   var newCharsNumber;
+  var newAllowedSites;
 
   if(changes.numSnippets){
     newSnippetsNumber = changes.numSnippets.newValue;
@@ -51,7 +76,11 @@ chrome.storage.onChanged.addListener(function(changes, namespace){
   if(changes.numChars){
     newCharsNumber = changes.numChars.newValue;
   }
-  updateOptionsValues(newSnippetsNumber, newCharsNumber);
+  if(changes.allowedSites){
+    newAllowedSites = changes.allowedSites.newValue;
+  }
+
+  updateOptionsValues(newSnippetsNumber, newCharsNumber, newAllowedSites);
 
 });
 
@@ -72,7 +101,7 @@ document.getElementById('options_link').addEventListener('click', function(){
 //all three options will be null, so they are set here. The DOM will be updated
 //by updateOptionsValues
 chrome.storage.local.get(null, function(result){
-  updateOptionsValues(result.numSnippets, result.numChars);
+  updateOptionsValues(result.numSnippets, result.numChars, result.allowedSites);
   if(!result.snippetHistory){
     chrome.storage.local.set({snippetHistory: []});
   }
