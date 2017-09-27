@@ -18,7 +18,7 @@ function save_options(){
   //or just a dot alone are valid inputs. Everything else is discarded.
   var allowedArray = allowedString.replace(/ /g,'').split(',').filter(function(value) {
     return value.match(/(.*\..*)|\./);
-  })
+  });
 
   chrome.storage.local.set({
     numSnippets: snippets,
@@ -34,15 +34,18 @@ function save_options(){
 
 //updates DOM with user Selected options. This function is called whenever the
 //remote storage is updated
-function updateOptionsValues(numSnippets=5, numChars=500, 
-    allowedSites=['stackoverflow.com']){
+function updateOptionsValues(){
+
+  var numSnippets = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 5;
+  var numChars = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  var allowedSites = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : ['stackoverflow.com'];
 
   document.getElementById('snippets').value = numSnippets;
   document.getElementById('chars').value = numChars;
 
   var allowedString = "";
-  for(let i = 0; i < allowedSites.length; i++) {
-   if(i == 0) {
+  for(var i = 0; i < allowedSites.length; i++) {
+   if(i === 0) {
      allowedString += allowedSites[i];
    }
    else {
@@ -110,13 +113,9 @@ chrome.storage.local.get(null, function(result){
 //draws the table with live Snippet History info whenever the options
 //modal or page is opened
 window.onload = function(){
-  table = document.createElement("table")
-  table.className = "snippet-history"
-  table.innerHTML = `<tr>
-                      <th>Code Snippet</th>
-                      <th>URL</th>
-                      <th>Date</th>
-                    </tr>`;
+  table = document.createElement("table");
+  table.className = "snippet-history";
+  table.innerHTML = '<tr>\n                      <th>Code Snippet</th>\n                      <th>URL</th>\n                      <th>Date</th>\n                    </tr>';
   document.querySelector("body").appendChild(table);
   chrome.storage.local.get("snippetHistory", function(result){
     snipArray = result.snippetHistory;
@@ -124,5 +123,5 @@ window.onload = function(){
     for(var i=0; i<snipArray.length; i++){
       updateSnippetHistory(snipArray[i]);
     }
-  })
-}
+  });
+};
