@@ -9,6 +9,9 @@ Chrome and Firefox extension to copy code snippet from Stack Overflow by double 
 
 ### Installing
 
+Available on the [Firefox Add-ons site](https://addons.mozilla.org/en-US/firefox/addon/cutcode/).
+
+
 - Clone the repo.
 
   ```shell
