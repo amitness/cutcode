@@ -27,7 +27,7 @@ chrome.storage.local.get(null, function (result) {
 				}
 			});
 
-			Array.from(document.getElementsByTagName('pre')) // get all code snippets
+			Array.from(document.getElementsByTagName('code')) // get all code snippets
 				.forEach(function (block) {
 
           var theKid = document.createElement("a");
@@ -74,7 +74,12 @@ chrome.storage.local.get(null, function (result) {
           });
 
 
-          block.parentNode.insertBefore(theKid, block)
+          if (block.parentNode.nodeName.toLowerCase() == "pre")
+          {
+            block.parentNode.parentNode.insertBefore(theKid, block.parentNode)
+          } else {
+            block.parentNode.insertBefore(theKid, block)
+          }
 
 					block.addEventListener('dblclick', function (event) {
 						// Reference: http://stackoverflow.com/a/6462980/3485241
