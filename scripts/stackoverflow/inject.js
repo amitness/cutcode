@@ -31,7 +31,8 @@ chrome.storage.local.get(null, function (result) {
 				.forEach(function (block) {
 
           var theKid = document.createElement("a");
-          theKid.innerHTML = 'Copy code: ';
+          theKid.innerHTML = 'Copy: ';
+          theKid.style.cssText = "font-size:0.6em";
           theKid.addEventListener('click', function (event) {
 						// Reference: http://stackoverflow.com/a/6462980/3485241
 
