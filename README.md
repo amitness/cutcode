@@ -1,9 +1,10 @@
 # cutcode
 
+Chrome and Firefox extension to copy code snippet from code blocks via double clicking / anchor link.
 
-Chrome and Firefox extension to copy code snippet from Stack Overflow by double clicking. 
+![Screenshot](demo.png)
 
-![Screencast](http://i.imgur.com/RbV6GgQ.gif)
+stackoverflow.com works by default - other sites may work, but may need some modification to the code.
 
 ## Getting Started
 
@@ -42,26 +43,6 @@ Available on the [Firefox Add-ons site](https://addons.mozilla.org/en-US/firefox
     For additional help, refer the [official guide for Firefox](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox).
   
 	![Installation screenshot](https://cloud.githubusercontent.com/assets/6765956/23825005/c8b70bfe-064f-11e7-9a9c-c228a6729b9c.png)
-
-
-### Local Development
-  - Follow installation instructions and install the extension.
-  - Work on the code.
-  - Use Reload (`Ctrl+R`) to reload the extension from `chrome://extensions` page.
-  - Test the new changes.
-
-## Contributing
-We :heart: contributions. Feel free to send us a PR.
-
-1. [Create an issue](https://github.com/amitness/cutcode/issues/new) if there is one.
-2. [Fork the repo](https://github.com/amitness/cutcode/fork).
-3. Create your feature branch (`git checkout -b your-feature`).
-4. Add and commit your changes (`git commit -am 'message'`).
-5. Push the branch (`git push origin your-feature`).
-6. Create a new Pull Request.
-
-### Feedback
-[Create an issue](https://github.com/amitness/cutcode/issues) for all discussions, bugs, feature requests and pull requests.
 
 ### License
 
