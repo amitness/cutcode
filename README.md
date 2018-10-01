@@ -13,6 +13,8 @@ Available on the [Firefox Add-ons site](https://addons.mozilla.org/en-US/firefox
 
 
 - Clone the repo.
+This is to make a copy of the master branch for yourself and make you contributions there. Only when you are done making contributions, you should create a pull request for maintainer's to review it and accept it. Be sure not to delete important info and never add spam content.
+Happy Open Source!
 
   ```shell
   git clone https://github.com/amitness/cutcode
