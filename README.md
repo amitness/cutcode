@@ -71,4 +71,4 @@ Icon provided by [Open Iconic](http://www.useiconic.com/open).
 
 ### References
 - [Copy & Paste & The Web : CSS-Tricks](https://css-tricks.com/copy-paste-the-web/)
-- [Double Click Event Handler: Stack Overflow](http://stackoverflow.com/questions/6462909/how-to-add-doubleclick-event-to-canvas-element-using-the-addeventlistener-meth)
+- [Double Click Event Handler: Stack Overflow](http://stackoverflow.com/questions/6482909/how-to-add-doubleclick-event-to-canvas-element-using-the-addeventlistener-meth)
