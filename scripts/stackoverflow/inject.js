@@ -62,7 +62,7 @@ chrome.storage.local.get(null, function (result) {
 							});
 
 							window.getSelection().removeAllRanges();
-							block.style.outline = '2px solid #0D0';
+							block.style.outline = '2px solid #000';
 							setTimeout(function () {
 								return block.style.outline = 'none';
 							}, 500);
